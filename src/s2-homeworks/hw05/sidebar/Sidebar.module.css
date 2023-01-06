@@ -5,21 +5,28 @@
 }
 
 .background {
+    background: #0059b3;
 }
 
 .nav {
+    color: #3a00cc;
 }
 
 .nav a {
+    color: #0066cc;
 }
 
 .nav a:hover {
+    color: #110101;
 }
 
 .nav a.active {
+    color: #00cc22;
+    background: #cc0000;
 }
 .close {
 }
 
 .close img {
 }
+
