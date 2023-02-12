@@ -1,3 +1,62 @@
+.button {
+    margin-top: 40px;
+
+}
+
 .loader {
     /*свг и/или анимация*/
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 10px;
+    top: 150px;
+    animation: ring 3s linear infinite;
+    background: conic-gradient(from 90deg at 50% 50%, rgba(255, 255, 255, 0) 0deg, #512DE4 360deg);
+    border-radius: 50%;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.loader::after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 70px;
+    top: 34px;
+    content: '';
+    background: #512DE4;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.loader::before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    left: 10px;
+    top: 10px;
+    content: 'Loading...';
+    font-size: 0.6em;
+    font-weight: 900;
+    background: white;
+    border-radius: 50%;
+    animation: ringReverse 3s linear infinite;
+}
+@keyframes ringReverse {
+    0% {
+        transform: rotate(1turn);
+    }
+    100% {
+        transform: rotate(0turn);
+    }
 }
