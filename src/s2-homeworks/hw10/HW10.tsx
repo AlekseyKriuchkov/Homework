@@ -19,7 +19,7 @@ const HW10 = () => {
 
     const dispatch = useDispatch()
     const isLoading = useSelector<AppStoreType, boolean >(state => state.loading.isLoading)
-    console.log(isLoading)
+
 
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
