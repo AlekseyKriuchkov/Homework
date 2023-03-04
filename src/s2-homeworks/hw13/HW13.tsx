@@ -36,11 +36,13 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                console.log(res.status)
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
                 setDisabled(disabled)
-                setInfo('...всё ок)')
+                setInfo('')
+                setText('...всё ок)')
             })
             .catch((e) => {
                 // дописать
@@ -48,18 +50,21 @@ const HW13 = () => {
                     setCode('Код 500!')
                     setImage(error500)
                     setDisabled(disabled)
-                    setInfo('эмитация ошибки на сервере')
+                    setInfo('')
+                    setText('эмитация ошибки на сервере')
                 } else if (e.response.status === 400) {
                     setCode('Код 400!')
                     setImage(error400)
                     setDisabled(disabled)
-                    setInfo('Ты не отправил success в body вообще!')
+                    setInfo('')
+                    setText('Ты не отправил success в body вообще!')
                 }
                 else if (e.code === 'ERR_NETWORK') {
                     setDisabled(disabled)
                     setCode(e.message)
                     setImage(errorUnknown)
-                    setInfo('Network Error AxiosError')
+                    setInfo('')
+                    setText('Network Error AxiosError')
                 }
             })
     }
